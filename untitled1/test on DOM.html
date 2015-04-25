@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+<script>
+
+function walkDOM(n) {
+    do {
+        console.log(n);
+        if (n.hasChildNodes()) {
+            walkDOM(n.firstChild)
+        }
+    } while (n = n.nextSibling)
+}
+
+walkDOM(document)
+
+function iter() {
+    var child = document.body;
+    while (child) {
+        //если есть дети, взять первого ребёнка
+        if (child.children.length > 0) {
+            child = child.firstElementChild;
+
+            //если есть сосед, взять соседа
+        } else if (child.nextElementSibling) {
+            child = child.nextElementSibling;
+
+            //есди ничего нет, подняться к domу покане найдешь родителя который имеет соседа и получить соседа
+        } else {
+            do {
+                child = child.parentNode;
+                //если возращаемся к document.body, return!
+                if (child === document.body) {
+                    return;
+                }
+            } while (!child.nextElementSibling)
+            child = child.nextElementSibling;
+        }
+        console.log(child.id);
+    }
+}
+
+iter();
+//
+//
+//    //////////////////////////////////////
+//
+//function walkTheDOM1(node, func) {
+//    func(node);
+//    node = node.firstChild;
+//    while (node) {
+//        walkTheDOM1(node, func);
+//        node = node.nextSibling;
+//    }
+//}
+//
+//function walkTheDOM2(root, func) {
+//    var node = root;
+//
+//    start: while (node) {
+//        func(node);
+//        if (node.firstChild) {
+//            node = node.firstChild;
+//            continue start;
+//        }
+//
+//        while (node) {
+//            if (node === root) {
+//                break start;
+//            }
+//
+//            if (node.nextSibling) {
+//                node = node.nextSibling;
+//                continue start;
+//            }
+//
+//            node = node.parentNode;
+//        }
+//    }
+//}
+</script>
+
+</body>
+
+</html>

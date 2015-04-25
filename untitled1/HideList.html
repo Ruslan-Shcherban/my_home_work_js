@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title></title>
+
+    <div class= "fa fa-caret-right" id="caretRight" style="color: lawngreen"  > </div>
+
+    <div class="fa fa-caret-down" id = "caretDown" style="color: lawngreen" > </div>
+
+    <a href="#Sweets" onclick="f(),moveDownUp" id = '1' style="text-decoration: blink; color: black " >Сладости (нажми меня)!</a>
+
+    <div id="block" style= "display: none" > <span>Торт</span><br><span>Пончик</span><br><span>Пирожное</span> </div>
+
+    <script>
+        var caretFirst = document.getElementById('caretRight');
+        var caretSecond = document.getElementById('caretDown');
+
+        function f() {
+            if (document.getElementById('block').style.display == "none")
+            {document.getElementById('block').style.display = "block";
+            caretFirst.style.display = 'none';
+            caretSecond.style.display = 'inline';}
+            else
+            {document.getElementById('block').style.display = "none"
+                caretSecond.style.display = 'none';
+                caretFirst.style.display = 'inline';}
+        }
+
+        function loadPage() {
+            caretSecond.style.display = 'none';
+        }
+    </script>
+
+</head>
+
+<body onload="loadPage()">
+
+</body>
+</html>
