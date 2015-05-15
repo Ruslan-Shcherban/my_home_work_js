@@ -1,0 +1,70 @@
+body {
+    color: #777;
+    font-family: sans-serif;
+}
+a {
+    color: #e1524b;
+    text-decoration: underline;
+}
+.container {
+    margin: 0 auto;
+    width: 1170px;
+}
+header {
+    background: url("../images/header_back.png") repeat-x scroll left bottom #76c7c0;
+    color: white;
+    padding: 26px;
+}
+#karusel {
+    background-color: #7f8c8c;
+    padding: 166px;
+}
+#footer {
+    background: url("../images/line-down.png") repeat-x scroll left top #76c7c0;
+    height: 350px;
+}
+#footer2 {
+    background-color: cadetblue;
+    height: 50px;
+}
+.social-links {
+    float: right;
+}
+.social-links * {
+    background: url("../images/social-links.png") no-repeat scroll 0 0 coral;
+    display: inline-block;
+    height: 17px;
+    width: 50px;
+}
+.clearfix {
+    clear: both;
+}
+.rectangle-center1 {
+    background-color: white;
+    padding: 197px;
+}
+.rectangle-center2 {
+    background: url("../images/line-down.png") repeat-x scroll left top #ececec;
+    padding: 250px;
+}
+.rectangle-center3 {
+    background-color: white;
+    padding: 250px;
+}
+#section-intro {
+    background-color: #cccccc;
+    border-radius: 9px;
+    text-indent: 26px;
+    padding: 11px;
+    margin: -164px -170px ;
+}
+.text {
+    font-family: open sans semibold;
+    font-size: 30px;
+    margin: auto;
+}
+.text2 {
+    font-family: open sans regular;
+    font-size: 13px;
+    margin: auto;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="carusel" class="carusel">
+    <button class="arrow prev">⇦</button>
+    <div class="gallery">
+        <ul class="images">
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/02-mercury-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/03-venus-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/04-earth-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/05-moon-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/06-mars-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/07-jupiter-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/08-saturn-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/09-uranus-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/10-neptune-icon.png"></li>
+            <li><img src="http://pro-diz-art.ru/wp-content/uploads/2014/03/thanatos-icon.png"></li>
+        </ul>
+    </div>
+    <button class="arrow next">⇨</button>
+</div>
+
+<script>
+
+
+    var width = 130;
+    var count = 3;
+
+    var carusel = document.getElementById('carusel');
+    var list = carusel.querySelector('ul');
+    var listElems = carusel.querySelectorAll('li');
+
+    var position = 0;
+
+    carusel.querySelector('.prev').onclick = function() {
+        if (position >= 0)
+            return;
+
+    position = Math.min(position + width * count, 0)
+    list.style.marginLeft = position + 'px';
+    };
+
+    carusel.querySelector('.next').onclick = function() {
+        if (position <= -width * (listElems.length - count)) return;
+
+
+        position = Math.max(position - width * count, -width * (listElems.length - count));
+        list.style.marginLeft = position + 'px';
+    };
+</script>
+</body>
+
+</html>
