@@ -2,69 +2,130 @@ body {
     color: #777;
     font-family: sans-serif;
 }
-a {
-    color: #e1524b;
-    text-decoration: underline;
-}
+
 .container {
     margin: 0 auto;
     width: 1170px;
 }
+.textHeader{
+    text-anchor: 1px;
+}
+
 header {
     background: url("../images/header_back.png") repeat-x scroll left bottom #76c7c0;
     color: white;
     padding: 26px;
 }
+
 #karusel {
     background-color: #7f8c8c;
     padding: 166px;
+
 }
+
+#vestibulum{
+    display: block;
+    margin: 0 auto;
+}
+
+#arrow_left {
+    background-image: url("../images/arrow-left.png");
+    border-color: red;
+    border-radius: 5px;
+    float: left;
+    height: 64px;
+    margin: -71px -165px;
+    width: 52px;
+}
+
+#arrow_right{
+    background-image: url("../images/arrow-right.png");
+    float: right;
+    height: 64px;
+    margin: -71px -165px;
+    border-radius: 4px;
+    border-color: red;
+    width: 52px;
+}
+
 #footer {
     background: url("../images/line-down.png") repeat-x scroll left top #76c7c0;
     height: 350px;
 }
+
 #footer2 {
     background-color: cadetblue;
     height: 50px;
 }
+
 .social-links {
     float: right;
 }
+
 .social-links * {
     background: url("../images/social-links.png") no-repeat scroll 0 0 coral;
     display: inline-block;
     height: 17px;
     width: 50px;
 }
+
 .clearfix {
     clear: both;
 }
+
 .rectangle-center1 {
     background-color: white;
     padding: 197px;
 }
+
+.karusel{
+
+}
+
+#karusel_down {
+    padding: 376px;
+    position: absolute;
+    top: 214px;
+}
+
 .rectangle-center2 {
     background: url("../images/line-down.png") repeat-x scroll left top #ececec;
     padding: 250px;
 }
+
 .rectangle-center3 {
     background-color: white;
     padding: 250px;
 }
+
 #section-intro {
     background-color: #cccccc;
     border-radius: 9px;
     text-indent: 26px;
     padding: 11px;
-    margin: -164px -170px ;
+    margin: -164px -170px;
 }
+
 .text {
     font-family: open sans semibold;
     font-size: 30px;
     margin: auto;
 }
+
 .text2 {
     font-family: open sans regular;
     font-size: 13px;
     margin: auto;
+}
+
+#view {
+    background-color: #e8645a;
+    border: 2px solid #e2534b;
+    border-radius: 6px;
+    float: right;
+    margin: auto;
+    padding: 8.95px;
+    position: relative;
+    top: -42px;
+    width: 3.91cm;
 }

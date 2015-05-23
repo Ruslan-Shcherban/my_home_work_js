@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My project</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+<body>
+
+<!--<input id="b2" value="Button" type="submit" style="position: relative; left: 25px;"/>-->
+
+<form class="clear">
+    <input id="b3" value="Clear" type="submit"/>
+</form>
+
+<form class="two">
+    <input type="text" name="first_name"/>
+    <input type="text" name="phone"/>
+    <input id="b2" value="Ok" type="submit"/>
+</form>
+
+<form class="modify">
+    <input id="b4" value="modify" type="submit"/>
+</form>
+
+<ul class="contact_list"></ul>
+
+<script>
+    $(document).ready(function () {
+        var $form = $('form.two');
+        var $contact_list = $('.contact_list');
+        var storageContactList = JSON.parse(localStorage.getItem('contact_list'));
+        var $form2 = $('form.clear');
+        var $form3 = $('form.modify');
+
+        if (!storageContactList) {
+            storageContactList = [];
+        }
+
+        storageContactList.forEach(function (contact) {
+            $contact_list.append("<li>" + contact.first_name + "-" + contact.phone + "</li>");
+        });
+
+        $form.on('submit', function (event) {
+            event.preventDefault();
+
+            var $first_name = $form.find('input[name= "first_name"]');
+            var $phone = $form.find('input[name= "phone"]');
+
+            var data = {
+                first_name: $first_name.val(),
+                phone: $phone.val()
+
+            };
+
+            $first_name.val('');
+            $phone.val('');
+
+            storageContactList.push(data);
+            localStorage.setItem('contact_list', JSON.stringify(storageContactList));
+
+            $contact_list.append("<li>" + data.first_name + "-" + data.phone + "</li>");
+
+//            var formData = form.serializeArray();
+//
+//            formData.forEach(function(element) {
+//              data[element.name] = element.value;
+//            })
+//        console.log(data);
+            return false
+//                console.log(form.serializeArray());
+
+        });
+
+        $form2.on('submit', function (event) {
+            event.preventDefault();
+
+            localStorage.clear();
+            $('ul').html('');
+            return false
+        });
+
+        $form3.on('submit', function(event){
+            event.preventDefault();
+
+
+        })
+
+    });
+
+
+</script>
+
+</body>
+</html>

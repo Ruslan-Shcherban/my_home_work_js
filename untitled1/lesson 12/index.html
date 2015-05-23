@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">-->
+
+    <title></title>
+</head>
+
+<body>
+
+<p><input type="button" value="Popup!" id="popup__toggle" /></p>
+
+<div class="overlay">
+    <div class="popup">
+        <a href="#" class="popup__close">X</a>
+        <h2>Welcome!</h2>
+        <p>Please enter your login and password to continue</p>
+        <div class="popup-form__row">
+            <label for="popup-form_login">Login</label>
+            <input type="text" id="popup-form_login" value="" />
+        </div>
+        <div class="popup-form__row">
+            <label for="popup-form_password">Password</label>
+            <input type="password" id="popup-form_password" value="" />
+        </div>
+        <input type="button" value="Log in" />
+    </div>
+</div>
+
+<script>
+
+    p = $('.overlay')
+    $('#popup__toggle').click(function() {
+        p.css('display', 'block')
+    })
+    p.click(function(event) {
+        e = event || window.event
+        if (e.target == this) {
+            $(p).css('display', 'none')
+        }
+    })
+    $('.popup__close').click(function() {
+        p.css('display', 'none')
+    })
+</script>
+
+</body>
+</html>
